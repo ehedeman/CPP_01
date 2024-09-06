@@ -5,35 +5,30 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/05 12:36:50 by ehedeman          #+#    #+#              #
-#    Updated: 2024/09/05 12:38:24 by ehedeman         ###   ########.fr        #
+#    Created: 2024/09/06 10:33:34 by ehedeman          #+#    #+#              #
+#    Updated: 2024/09/06 11:47:10 by ehedeman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp			\
-		HumanA.cpp		\
-		HumanB.cpp		\
-		Weapon.cpp
+SRC = main.cpp
 
 OBJS_DIR = objs/
 OBJS = $(SRC:.cpp=.o)
 OBJS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
-HEADERS = Weapon.hpp	\
-			HumanA.hpp	\
-			HumanB.hpp
+HEADERS = main.hpp
 CC = g++
 RM = rm -rf
 MKDIR = mkdir -p
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = fightclub
+NAME = main
 
 all: $(NAME)
 
 $(NAME): $(OBJS_PREFIXED)
 	$(CC) $(CCPFLAGS) $(OBJS_PREFIXED) -o $(NAME)
 
-$(OBJS_DIR)%.o : %.cpp $(HEADERS)
+$(OBJS_DIR)%.o : %.cpp #$(HEADERS)
 	$(MKDIR) $(OBJS_DIR)
 	$(CC) $(CCPFLAGS) -c $< -o $@
 
