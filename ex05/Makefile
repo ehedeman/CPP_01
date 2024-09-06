@@ -5,35 +5,36 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/06 10:33:34 by ehedeman          #+#    #+#              #
-#    Updated: 2024/09/06 14:37:23 by ehedeman         ###   ########.fr        #
+#    Created: 2024/09/06 14:26:42 by ehedeman          #+#    #+#              #
+#    Updated: 2024/09/06 14:39:27 by ehedeman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp
+SRC = main.cpp		\
+		Harl.cpp
 
 OBJS_DIR = objs/
 OBJS = $(SRC:.cpp=.o)
 OBJS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
-#HEADERS = main.hpp
+HEADERS = Harl.hpp
 CC = g++
 RM = rm -rf
 MKDIR = mkdir -p
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = main
+NAME = Harl
 
 all: $(NAME)
 
 $(NAME): $(OBJS_PREFIXED)
 	$(CC) $(CCPFLAGS) $(OBJS_PREFIXED) -o $(NAME)
 
-$(OBJS_DIR)%.o : %.cpp #$(HEADERS)
+$(OBJS_DIR)%.o : %.cpp $(HEADERS)
 	$(MKDIR) $(OBJS_DIR)
 	$(CC) $(CCPFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS_DIR) testfile.replace
+	$(RM) $(OBJS_DIR)
 
 fclean: clean
 	rm -f $(NAME)

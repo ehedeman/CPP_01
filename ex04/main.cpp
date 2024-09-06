@@ -6,11 +6,12 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 11:47:27 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/06 13:20:17 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/06 14:36:47 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
