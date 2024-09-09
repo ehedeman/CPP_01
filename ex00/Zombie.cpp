@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 11:07:37 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/04 11:47:41 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/09 13:48:36 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	Zombie::setName(std::string name)
 	this->name = name;
 }
 
-std::string	Zombie::getName(){return(this->name);};
+std::string	Zombie::getName(){return(this->name);}
 
 // void	Zombie::destroyZombie()
 // {

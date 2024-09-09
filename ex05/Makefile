@@ -6,7 +6,7 @@
 #    By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/06 14:26:42 by ehedeman          #+#    #+#              #
-#    Updated: 2024/09/06 14:39:27 by ehedeman         ###   ########.fr        #
+#    Updated: 2024/09/09 13:41:16 by ehedeman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,11 +27,11 @@ NAME = Harl
 all: $(NAME)
 
 $(NAME): $(OBJS_PREFIXED)
-	$(CC) $(CCPFLAGS) $(OBJS_PREFIXED) -o $(NAME)
+	$(CC) $(CPPFLAGS) $(OBJS_PREFIXED) -o $(NAME)
 
 $(OBJS_DIR)%.o : %.cpp $(HEADERS)
 	$(MKDIR) $(OBJS_DIR)
-	$(CC) $(CCPFLAGS) -c $< -o $@
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS_DIR)
@@ -41,4 +41,8 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean re fclean
+leaks: 
+	valgrind --leak-check=full	\
+         --show-leak-kinds=all ./$(NAME)
+
+.PHONY: all clean re fclean leaks

@@ -6,7 +6,7 @@
 #    By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/04 11:04:08 by ehedeman          #+#    #+#              #
-#    Updated: 2024/09/04 13:16:54 by ehedeman         ###   ########.fr        #
+#    Updated: 2024/09/09 13:39:59 by ehedeman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,11 +29,11 @@ NAME = zombie
 all: $(NAME)
 
 $(NAME): $(OBJS_PREFIXED)
-	$(CC) $(CCPFLAGS) $(OBJS_PREFIXED) -o $(NAME)
+	$(CC) $(CPPFLAGS) $(OBJS_PREFIXED) -o $(NAME)
 
 $(OBJS_DIR)%.o : %.cpp $(HEADERS)
 	$(MKDIR) $(OBJS_DIR)
-	$(CC) $(CCPFLAGS) -c $< -o $@
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS_DIR)
@@ -43,4 +43,8 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean re fclean
+leaks: 
+	valgrind --leak-check=full	\
+         --show-leak-kinds=all ./$(NAME)
+
+.PHONY: all clean re fclean leaks

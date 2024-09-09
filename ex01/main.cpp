@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 11:07:22 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/04 14:36:01 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/09 14:52:45 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int	main()
 		return (0);
 	Zombie *horde = zombieHorde(nbr, name);
 	std::cout << "Behold! The horde." << std::endl << "..." << std::endl;;
-	int i = 0;
 	for (int i = 0; i < nbr; i++)
 	{
 		horde[i].announce();
@@ -84,7 +83,7 @@ int getNbr()
 	}
 	if (std::cin.eof())
 		return (-1);
-	nbr = atoi(reply.c_str());
+	nbr = std::atoi(reply.c_str());
 	return (nbr);
 }
 

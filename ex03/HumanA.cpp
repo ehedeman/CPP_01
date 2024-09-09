@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:59:13 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/05 12:54:32 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/09 14:54:21 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ HumanA::~HumanA()
 
 void	HumanA::attack()
 {
-	std::cout << this->name << "attacks with their weapon" << 
+	std::cout << this->name << " attacks with their weapon" << 
 	this->woppie.getType() << std::endl;
-};
+}

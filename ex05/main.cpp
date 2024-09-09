@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 14:26:29 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/06 15:21:14 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/09 11:09:58 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int main()
     harl.complain("INFO");
     harl.complain("WARNING");
     harl.complain("ERROR");
+    harl.complain("blah");
     return (0);
 }

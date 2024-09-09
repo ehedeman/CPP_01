@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 11:07:40 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/04 14:26:39 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/09 14:52:31 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 class Zombie{
 

@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:59:05 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/06 10:32:38 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/09 14:54:25 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ void	HumanB::setWeapon(class Weapon &woppie)
 
 void	HumanB::attack()
 {
-	std::cout << this->name << "attacks with their weapon" << 
+	std::cout << this->name << " attacks with their weapon" << 
 	this->woppie->getType() << std::endl;
-};
+}

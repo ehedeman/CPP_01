@@ -6,7 +6,7 @@
 #    By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/06 10:33:34 by ehedeman          #+#    #+#              #
-#    Updated: 2024/09/06 14:37:23 by ehedeman         ###   ########.fr        #
+#    Updated: 2024/09/09 13:41:10 by ehedeman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,11 +26,11 @@ NAME = main
 all: $(NAME)
 
 $(NAME): $(OBJS_PREFIXED)
-	$(CC) $(CCPFLAGS) $(OBJS_PREFIXED) -o $(NAME)
+	$(CC) $(CPPFLAGS) $(OBJS_PREFIXED) -o $(NAME)
 
 $(OBJS_DIR)%.o : %.cpp #$(HEADERS)
 	$(MKDIR) $(OBJS_DIR)
-	$(CC) $(CCPFLAGS) -c $< -o $@
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS_DIR) testfile.replace
@@ -40,4 +40,8 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean re fclean
+leaks: 
+	valgrind --leak-check=full	\
+         --show-leak-kinds=all ./$(NAME) testfile a blah
+
+.PHONY: all clean re fclean leaks
