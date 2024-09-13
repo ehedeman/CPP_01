@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:59:25 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/05 12:42:35 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/10 11:46:15 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Weapon
 private:
 	std::string type;
 public:
-	Weapon(){};
+//	Weapon(){};
 	Weapon(std::string type);
 	~Weapon();
 	

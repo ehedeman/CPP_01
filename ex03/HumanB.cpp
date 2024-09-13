@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:59:05 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/09 14:54:25 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/10 11:47:05 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,20 @@ HumanB::~HumanB()
 }
 
 // std::string	HumanB::getName(){return(name);}
-// class Weapon	HumanB::getWeapon(){return(woppie);}
+// class Weapon	HumanB::getWeapon(){return(weapon);}
 
 // void	HumanB::setName(std::string name)
 // {
 // 	this->name = name;
 // }
 
-void	HumanB::setWeapon(class Weapon &woppie)
+void	HumanB::setWeapon(class Weapon &weapon)
 {
-	this->woppie = &woppie;
+	this->weapon = &weapon;
 }
 
 void	HumanB::attack()
 {
 	std::cout << this->name << " attacks with their weapon" << 
-	this->woppie->getType() << std::endl;
+	this->weapon->getType() << std::endl;
 }
